@@ -1,4 +1,4 @@
-Class 17 – Regional outbreak analysis
+Class 14 – Regional outbreak analysis
 ====================================================
 
 Goals
