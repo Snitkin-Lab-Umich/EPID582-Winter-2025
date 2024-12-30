@@ -1,10 +1,10 @@
-# MICRO582/EPI582 - Genomic Epidemiology Winter 2024
+# MICROBIOL582/EPID582 - Molecular Epidemiology and Pathogen Genomics Winter 2025
 
-#### Instructor(s): Evan Snitkin
+#### Instructor(s): Evan Snitkin and Heather Blankenship
 
 #### Description: Provide an overview of cutting-edge approaches for Microbial Genomic analysis, with a focus on their application in the emerging field of genomic epidemiology. Lectures will be reinforced with discussions and extensive hands-on training. Students will gain experience on the command-line and in performing downstream analysis and visualization in R.
 
-#### Date: Winter Term 2024
+#### Date: Winter Term 2025
 
 #### Course Discipline: Epidemiology
 
@@ -41,15 +41,14 @@
 - [Submit a job to cluster](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class4/README.md#submit-a-job-to-cluster)
 - [Setting up Jupyter Notebook with Great Lakes Open OnDemand](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class4/README.md#setting-up-jupyter-notebook-with-great-lakes-open-ondemand)
 
+### Section - Generating sequence data and performing annotation
+------------------------------------------------------------
+
 #### [Class 5 – Illumina sequencing data and QC](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class5/README.md)
 ***
 
 - [Quality Control using FastQC](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class5/README.md#quality-control-using-fastqc)
 - [Quality Trimming using Trimmomatic](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class5/README.md#quality-trimming-using-trimmomatic)
-
-
-### Section - Generating sequence data and performing annotation
-------------------------------------------------------------
 
 #### [Class 6 – Genome assembly](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class6/README.md)
 ***
@@ -58,7 +57,7 @@
 - [Assess assembly quality with Quast](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class6/README.md#assess-assembly-quality-with-quast)
 - [Aggregate and Assess dataset quality using multiQC](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class6/README.md#aggregate-and-assess-dataset-quality-using-multiqc)
 
-#### [Class 7 – Genome annotation and Resistome analysis](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class7/README.md)
+#### [Class 7 – Genome annotation](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class7/README.md)
 ***
 
 - [Genome annotation using PROKKA](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class7/README.md#genome-annotation-using-prokka)
@@ -127,58 +126,51 @@
 ### Section - Hospital outbreak investigation
 ----------------------------------------------------
 
-#### [Class 14 – Overview of genomic epidemiology](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class14/README.md)
+#### [Class 13 – Overview of genomic epidemiology](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class14/README.md)
 ***
 
 
-
-
-#### [Class 15 – Guest lecture on AMR in public health](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class15/README.md)
-***
-
-
-
-
-#### [Class 16 – Transmission in endemic settings](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class16/README.md)
-***
-
-
-
-
-#### [Class 17 – Regional outbreaks](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class17/README.md)
+#### [Class 14 – Regional outbreaks](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class17/README.md)
 ***
 
 -  Investigating Regional transmission using Genomic data
 
 
-#### [Class 18 – Regional endemic spread](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class18/README.md)
+#### [Class 15 – Regional endemic spread](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class18/README.md)
 ***
 
 - Analyze AAC paper in regentrans
 
-#### [Class 19 – Guest lecture on AMR surveillance in the environment](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class19/README.md)
-***
 
-
-### Section - Genomic epidemiology of SARS-CoV-2
+### Section - Applications in Public Health
 --------------------------------------------
-#### [Class 20– Guest lecture on COVID genomics in public health](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class20/README.md)
-***
-
-#### [Class 21 – Final project planning session](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class21/README.md)
-***
-
-
-#### [Class 22 – SARS-CoV-2 genomics](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class22/README.md)
+#### [Class 16 – Privacy, Policy and Politics](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class22/README.md)
 ***
 
 - Examine the impact of data QC on genetic distance distributions
 - Identify putative transmission clusters and examine makeup
 
-#### [Class 23 – Dated phylogenetic analysis](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class23/README.md)
+#### [Class 17 – Viral Genomic Epidemiology](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class23/README.md)
 ***
 
 - Perform root-to-tip analysis before and after data QC
 - Construct dated tree
 - Overlay geographic data on tree
 
+
+<!---
+
+#### [Class 16 – SARS-CoV-2 genomics](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class22/README.md)
+***
+
+- Examine the impact of data QC on genetic distance distributions
+- Identify putative transmission clusters and examine makeup
+
+#### [Class 17 – Dated phylogenetic analysis](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class23/README.md)
+***
+
+- Perform root-to-tip analysis before and after data QC
+- Construct dated tree
+- Overlay geographic data on tree
+
+-->
