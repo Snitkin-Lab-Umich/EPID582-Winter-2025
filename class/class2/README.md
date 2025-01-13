@@ -14,7 +14,7 @@ In the first class we learned that when you log in to Great Lakes you are placed
 
 ```
 #Change directory
-cd /scratch/epid582w24_class_root/epid582w24_class/
+cd /scratch/epid582w25_class_root/epid582w25_class/
 
 #Make sure it worked
 pwd
@@ -32,7 +32,7 @@ Now, let's all go into our course home directory, and copy over some files that 
 cd esnitkin 
 
 #Copy over files for today using the relative path
-cp -r ../shared_data/data/class2/ .
+cp -r ../shared_data/class2/ .
 
 #Make sure the copy worked
 ls
