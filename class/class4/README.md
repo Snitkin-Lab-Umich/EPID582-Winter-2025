@@ -16,7 +16,7 @@ For class labs and assignments we have been and will continue to work on the sha
 
 ```
 #Go to the class directory
-cd /scratch/epid582w24_class_root/epid582w24_class/
+cd /scratch/epid582w25_class_root/epid582w25_class/
 
 #Check out what's here
 ls
@@ -75,7 +75,7 @@ One way to set your environment variables would be to manually set up these vari
 
 Most of the softwares/tools that we need in this workshop we will install with the conda environment manager (to be discussed in future session). However, a few programs cause issues when installed by conda, so we placed them in the following directory: 
 
-`/scratch/epid582w24_class_root/epid582w24_class/shared_data/bin` 
+`/scratch/epid582w25_class_root/epid582w25_class/shared_data/bin` 
 
 and we want the shell to look for these installed tools in this directory so we can use them. 
 
@@ -142,12 +142,12 @@ conda config --set auto_activate_base false
 ##epid582 ENV
 
 #Aliases
-alias islurm='srun --account=epid582w24_class --nodes=1 --ntasks-per-node=1 --mem-per-cpu=5GB --cpus-per-task=1 --time=12:00:00 --pty /bin/bash'
-alias wd='cd /scratch/epid582w24_class_root/epid582w24_class/username/'
+alias islurm='srun --account=epid582w25_class --nodes=1 --ntasks-per-node=1 --mem-per-cpu=5GB --cpus-per-task=1 --time=12:00:00 --pty /bin/bash'
+alias wd='cd /scratch/epid582w25_class_root/epid582w25_class/username/'
 
 #Bioinformatics Tools installed outside the conda environment due to dependency conflicts.
-export PATH=$PATH:/scratch/epid582w24_class_root/epid582w24_class/shared_data/bin/quast-5.0.2
-export PATH=$PATH:/scratch/epid582w24_class_root/epid582w24_class/shared_data/bin/multiqc/bin
+export PATH=$PATH:/scratch/epid582w25_class_root/epid582w25_class/shared_data/bin/quast-5.0.2
+export PATH=$PATH:/scratch/epid582w25_class_root/epid582w25_class/shared_data/bin/multiqc/bin
 
 ```
 
@@ -181,24 +181,24 @@ wd
 
 ```
 
-You should be in your class working directory that is /scratch/epid582w24_class_root/epid582w24_class/username 
+You should be in your class working directory that is /scratch/epid582w25_class_root/epid582w25_class/username 
 
 
 Copy over files for today's lesson
 ----------------------------------
 
-Data for this lesson is located here - `/scratch/epid582w24_class_root/epid582w24_class/shared_data/data/class4`
+Data for this lesson is located here - `/scratch/epid582w25_class_root/epid582w25_class/shared_data/data/class4`
 
 Change your current location to your working directory and copy class4 folder to your working directory.
 
 ```
-cd /scratch/epid582w24_class_root/epid582w24_class/username
+cd /scratch/epid582w25_class_root/epid582w25_class/username
 
 #OR
 
 wd
 
-cp -r /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/class4 ./
+cp -r /scratch/epid582w25_class_root/epid582w25_class/shared_data/class4 ./
 
 ```
 
@@ -333,7 +333,7 @@ Set up a conda environment using a YML file
 The YML file - `MICRO582_class5_QC.yml` required for generating a conda environment for our next class is located here:
 
 ```
-/scratch/epid582w24_class_root/epid582w24_class/shared_data/conda_envs
+/scratch/epid582w25_class_root/epid582w25_class/shared_data/conda_envs
 ```
 
 Load great lakes anaconda package and set up a conda environment in the following way - 
@@ -349,7 +349,7 @@ conda config --set channel_priority false
 
 # Create a new conda environment - micro612 from a YML file
 
-conda env create -f /scratch/epid582w24_class_root/epid582w24_class/shared_data/conda_envs/MICRO582_class5_QC.yml -n MICRO582_class5_QC
+conda env create -f /scratch/epid582w25_class_root/epid582w25_class/shared_data/conda_envs/MICRO582_class5_QC.yml -n MICRO582_class5_QC
 
 # Lets check the list of conda environments. 
 # You should see the conda environment name on left 
