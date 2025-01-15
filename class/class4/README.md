@@ -187,7 +187,7 @@ You should be in your class working directory that is /scratch/epid582w25_class_
 Copy over files for today's lesson
 ----------------------------------
 
-Data for this lesson is located here - `/scratch/epid582w25_class_root/epid582w25_class/shared_data/data/class4`
+Data for this lesson is located here - `/scratch/epid582w25_class_root/epid582w25_class/shared_data/class4`
 
 Change your current location to your working directory and copy class4 folder to your working directory.
 
