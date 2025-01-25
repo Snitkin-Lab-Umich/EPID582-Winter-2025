@@ -21,14 +21,23 @@ Contamination Screening using [Kraken](https://ccb.jhu.edu/software/kraken/)
 --------------------------------------------
 One important QC to perform when getting your sequencing data is to make sure you sequenced what you think you did. For this purpose, we will employ Kraken which is a taxonomic sequence classifier that assigns taxonomic labels to short DNA reads. We will screen our samples against a MiniKraken database (a pre-built database constructed from complete bacterial, archaeal, and viral genomes in NCBI RefSeq database) and confirm if the majority of reads in our sample belong to the target species.
 
-To run kraken we will use a Conda environment MICRO582_class5_QC. If you have not created the conda environment, please run the commands described in class3 section -  [Set up a conda environment using a YML file](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class4/README.md#set-up-a-conda-environment-using-a-yml-file)
+To run kraken we will create a Conda environment kraken_env. 
 
 Lets load the conda environment and check if we can call kraken help menu.
 
 ```
-conda activate MICRO582_class5_QC
+#Setup use of bioconda recipes for package installation
+conda config --add channels bioconda
+conda config --add channels conda-forge
+conda config --set channel_priority strict
 
+#Create new environment containing kraken (enter 'y' when prompted to install dependencies)
+conda create --name kraken_env kraken
 
+#Load environment
+conda activate kraken_env
+
+#Verify that it worked!
 kraken -h
 ```
 
