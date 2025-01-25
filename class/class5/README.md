@@ -21,7 +21,7 @@ Contamination Screening using [Kraken](https://ccb.jhu.edu/software/kraken/)
 --------------------------------------------
 One important QC to perform when getting your sequencing data is to make sure you sequenced what you think you did. For this purpose, we will employ Kraken which is a taxonomic sequence classifier that assigns taxonomic labels to short DNA reads. We will screen our samples against a MiniKraken database (a pre-built database constructed from complete bacterial, archaeal, and viral genomes in NCBI RefSeq database) and confirm if the majority of reads in our sample belong to the target species.
 
-All the tools that you would need for class5 QC are installed in your Conda environment MICRO582_class5_QC. If you have not created the conda environment, please run the commands described in class3 section -  [Set up a conda environment using a YML file](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class4/README.md#set-up-a-conda-environment-using-a-yml-file)
+To run kraken we will use a Conda environment MICRO582_class5_QC. If you have not created the conda environment, please run the commands described in class3 section -  [Set up a conda environment using a YML file](https://github.com/Snitkin-Lab-Umich/MICRO582-EPI582-Winter-2024/blob/main/class/class4/README.md#set-up-a-conda-environment-using-a-yml-file)
 
 Lets load the conda environment and check if we can call kraken help menu.
 
@@ -163,8 +163,10 @@ mkdir Rush_KPC_266_FastQC_results/before_trimmomatic
 > ***ii. Verify that FastQC is in your path by invoking it from command line.***
 
 ```
-#Active conda environment giving us access to fastqc
-conda activate MICRO582_class5_QC
+#Load fastqc pre-installed on Great Lakes using the module command
+module load Bioinformatics
+module load fastqc
+
 
 #Verify that you can run fastqc
 fastqc -h
@@ -216,12 +218,13 @@ For more information on how Trimmomatic tries to achieve this, Please refer [thi
 
 Now we will run Trimmomatic on these raw data to remove low quality reads as well as adapters. 
 
-> ***i. If the interactive session timed out, get an interactive cluster node again (using alias `islurm`) to start running programs and navigate to class4 directory. Also, load the Conda environment - MICRO582_class5_QC.***
+> ***i. If the interactive session timed out, get an interactive cluster node again (using alias `islurm`) to start running programs and navigate to class4 directory. Also, load the trimmomattic module***
 
 Run this only if you were logged out of interactive mode.
 
 ```
-conda activate MICRO582_class5_QC
+#Load trimmomatic module
+module load trimmomatic
 
 wd
 
@@ -238,7 +241,7 @@ mkdir Rush_KPC_266_trimmomatic_results
 
 ```
 
-trimmomatic –h
+TrimmomaticPE –h
 
 ```
 
@@ -246,7 +249,7 @@ trimmomatic –h
 
 ```
 
-trimmomatic PE Rush_KPC_266_1_combine.fastq.gz Rush_KPC_266_2_combine.fastq.gz Rush_KPC_266_trimmomatic_results/forward_paired.fq.gz Rush_KPC_266_trimmomatic_results/forward_unpaired.fq.gz Rush_KPC_266_trimmomatic_results/reverse_paired.fq.gz Rush_KPC_266_trimmomatic_results/reverse_unpaired.fq.gz ILLUMINACLIP:/scratch/epid582w25_class_root/epid582w25_class/shared_data/data/database/trimmomatic-0.39-2/adapters/TruSeq3-PE.fa:2:30:10:8:true SLIDINGWINDOW:4:15 MINLEN:40 HEADCROP:0
+TrimmomaticPE Rush_KPC_266_1_combine.fastq.gz Rush_KPC_266_2_combine.fastq.gz Rush_KPC_266_trimmomatic_results/forward_paired.fq.gz Rush_KPC_266_trimmomatic_results/forward_unpaired.fq.gz Rush_KPC_266_trimmomatic_results/reverse_paired.fq.gz Rush_KPC_266_trimmomatic_results/reverse_unpaired.fq.gz ILLUMINACLIP:/scratch/epid582w25_class_root/epid582w25_class/shared_data//database/trimmomatic-0.39-2/adapters/TruSeq3-PE.fa:2:30:10:8:true SLIDINGWINDOW:4:15 MINLEN:40 HEADCROP:0
 
 ```
 
