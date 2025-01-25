@@ -26,6 +26,9 @@ To run kraken we will create a Conda environment kraken_env.
 Lets load the conda environment and check if we can call kraken help menu.
 
 ```
+#Load anaconda module to enable use of conda
+module load python3.10-anaconda/2023.03
+
 #Setup use of bioconda recipes for package installation
 conda config --add channels bioconda
 conda config --add channels conda-forge
