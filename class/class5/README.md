@@ -41,7 +41,7 @@ When we previously used the cluster we created an sbat file and included specifi
 To submit an interactive job we will use an alias that we placed in our .bashrc called 'islurm'. When you type islurm, the following command will be executed:
 
 ```
-srun --account=epid582w24_class --nodes=1 --ntasks-per-node=1 --mem-per-cpu=5GB --cpus-per-task=1 --time=05:00:00 --pty /bin/bash
+srun --account=epid582w25_class --nodes=1 --ntasks-per-node=1 --mem-per-cpu=5GB --cpus-per-task=1 --time=05:00:00 --pty /bin/bash
 ```
 
 ***When you run islurm what happens?***
@@ -59,7 +59,7 @@ You should see "username@glXXXX" in your command prompt where XXXX refers to the
 wd
 
 #Copy over today's materials
-cp -r /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/class5 ./
+cp -r /scratch/epid582w25_class_root/epid582w25_class/shared_data/data/class5 ./
 
 #Go into the directory
 cd class5/
@@ -73,7 +73,7 @@ Since Kraken takes time to run, we have already placed the output of Kraken comm
 ```
 cd kraken_results
 
-kraken --quick --fastq-input --gzip-compressed --unclassified-out Rush_KPC_266_unclassified.txt --db /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/database/kraken/minikraken_20171013_4GB/ --output Rush_KPC_266_kraken Rush_KPC_266_1_combine.fastq.gz 
+kraken --quick --fastq-input --gzip-compressed --unclassified-out Rush_KPC_266_unclassified.txt --db /scratch/epid582w25_class_root/epid582w25_class/shared_data/data/database/kraken/minikraken_20171013_4GB/ --output Rush_KPC_266_kraken Rush_KPC_266_1_combine.fastq.gz 
 
 ```
 
@@ -82,7 +82,7 @@ After running kraken, we ran the kraken-report command to create a human readabl
 
 ```
 
-kraken-report --db /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/database/kraken/minikraken_20171013_4GB/ Rush_KPC_266_kraken > Rush_KPC_266_kraken_report.txt
+kraken-report --db /scratch/epid582w25_class_root/epid582w25_class/shared_data/data/database/kraken/minikraken_20171013_4GB/ Rush_KPC_266_kraken > Rush_KPC_266_kraken_report.txt
 
 ```
 
@@ -114,7 +114,7 @@ To enable easier interaction with the results, kraken comes with a companion too
 ```
 cut -f2,3 Rush_KPC_266_kraken > Rush_KPC_266_krona.input
 
-ktImportTaxonomy -tax /scratch/epid582w24_class_root/epid582w24_class/shared_data/bin/KronaTools-2.8.1/taxonomy/ Rush_KPC_266_krona.input -o Rush_KPC_266_krona.out.html
+ktImportTaxonomy -tax /scratch/epid582w25_class_root/epid582w25_class/shared_data/bin/KronaTools-2.8.1/taxonomy/ Rush_KPC_266_krona.input -o Rush_KPC_266_krona.out.html
 ```
 <!---
 In case you get an error saying - Taxonomy not found, run updateTaxonomy.sh command.
@@ -130,7 +130,7 @@ Use cyberduck or the scp command as shown below to copy over the Kraken/krona ht
 
 ```
 
-scp username@greatlakes-xfer.arc-ts.umich.edu:/scratch/epid582w24_class_root/epid582w24_class/shared_data/data/class5/kraken_results/Rush_KPC_266_krona.out.html /path-to-local-directory/
+scp username@greatlakes-xfer.arc-ts.umich.edu:/scratch/epid582w25_class_root/epid582w25_class/shared_data/data/class5/kraken_results/Rush_KPC_266_krona.out.html /path-to-local-directory/
 
 #You can use ~/Desktop/ as your local directory path
 
@@ -187,7 +187,7 @@ You can visualize and assess the quality of data by opening html report in a loc
 > ***iv. Download the FastQC html report to your home computer to examine using scp***
 
 ```
-scp username@greatlakes-xfer.arc-ts.umich.edu:/scratch/epid582w24_class_root/epid582w24_class/username/class5/Rush_KPC_266_FastQC_results/before_trimmomatic/*.html /path-to-local-directory/
+scp username@greatlakes-xfer.arc-ts.umich.edu:/scratch/epid582w25_class_root/epid582w25_class/username/class5/Rush_KPC_266_FastQC_results/before_trimmomatic/*.html /path-to-local-directory/
 
 ```
 
@@ -246,14 +246,14 @@ trimmomatic –h
 
 ```
 
-trimmomatic PE Rush_KPC_266_1_combine.fastq.gz Rush_KPC_266_2_combine.fastq.gz Rush_KPC_266_trimmomatic_results/forward_paired.fq.gz Rush_KPC_266_trimmomatic_results/forward_unpaired.fq.gz Rush_KPC_266_trimmomatic_results/reverse_paired.fq.gz Rush_KPC_266_trimmomatic_results/reverse_unpaired.fq.gz ILLUMINACLIP:/scratch/epid582w24_class_root/epid582w24_class/shared_data/data/database/trimmomatic-0.39-2/adapters/TruSeq3-PE.fa:2:30:10:8:true SLIDINGWINDOW:4:15 MINLEN:40 HEADCROP:0
+trimmomatic PE Rush_KPC_266_1_combine.fastq.gz Rush_KPC_266_2_combine.fastq.gz Rush_KPC_266_trimmomatic_results/forward_paired.fq.gz Rush_KPC_266_trimmomatic_results/forward_unpaired.fq.gz Rush_KPC_266_trimmomatic_results/reverse_paired.fq.gz Rush_KPC_266_trimmomatic_results/reverse_unpaired.fq.gz ILLUMINACLIP:/scratch/epid582w25_class_root/epid582w25_class/shared_data/data/database/trimmomatic-0.39-2/adapters/TruSeq3-PE.fa:2:30:10:8:true SLIDINGWINDOW:4:15 MINLEN:40 HEADCROP:0
 
 ```
 
 
 ![alt tag](https://github.com/alipirani88/Comparative_Genomics/blob/master/_img/day1_morning/trimm_parameters.png)
 
-First, Trimmomatic searches for any matches between the reads and adapter sequences. Adapter sequences are stored in this directory of Trimmomatic tool: /scratch/epid582w24_class_root/epid582w24_class/shared_data/database/trimmomatic-0.39-1/adapters/. Trimmomatic comes with a list of standard adapter fasta sequences such TruSeq, Nextera etc. You should use appropriate adapter fasta sequence file based on the illumina kit that was used for sequencing. You can get this information from your sequencing centre or can find it in FastQC html report (Section: Overrepresented sequences).
+First, Trimmomatic searches for any matches between the reads and adapter sequences. Adapter sequences are stored in this directory of Trimmomatic tool: /scratch/epid582w25_class_root/epid582w25_class/shared_data/database/trimmomatic-0.39-1/adapters/. Trimmomatic comes with a list of standard adapter fasta sequences such TruSeq, Nextera etc. You should use appropriate adapter fasta sequence file based on the illumina kit that was used for sequencing. You can get this information from your sequencing centre or can find it in FastQC html report (Section: Overrepresented sequences).
 
 Short sections (2 bp as determined by seed misMatch parameter) of each adapter sequences (contained in TruSeq3-PE.fa) are tested in each possible position within the reads. If it finds a perfect match, It starts searching the entire adapter sequence and scores the alignment. The advantage here is that the full alignment is calculated only when there is a perfect seed match which results in considerable efficiency gains. So, When it finds a match, it moves forward with full alignment and when the match reaches 10 bp determined by simpleClipThreshold, it finally trims off the adapter from reads.  
 
@@ -273,7 +273,7 @@ Get these html reports to your local system.
 
 ```
 
-scp username@greatlakes-xfer.arc-ts.umich.edu:/scratch/epid582w24_class_root/epid582w24_class/username/class5/Rush_KPC_266_FastQC_results/after_trimmomatic/*.html /path-to-local-directory/
+scp username@greatlakes-xfer.arc-ts.umich.edu:/scratch/epid582w25_class_root/epid582w25_class/username/class5/Rush_KPC_266_FastQC_results/after_trimmomatic/*.html /path-to-local-directory/
 
 ```
 
@@ -294,7 +294,7 @@ This doesn't look very bad but you can remove the red cross sign by trimming the
 mkdir Rush_KPC_266_trimmomatic_results_with_headcrop/
 
 
-time trimmomatic PE Rush_KPC_266_1_combine.fastq.gz Rush_KPC_266_2_combine.fastq.gz Rush_KPC_266_trimmomatic_results_with_headcrop/forward_paired.fq.gz Rush_KPC_266_trimmomatic_results_with_headcrop/forward_unpaired.fq.gz Rush_KPC_266_trimmomatic_results_with_headcrop/reverse_paired.fq.gz Rush_KPC_266_trimmomatic_results_with_headcrop/reverse_unpaired.fq.gz ILLUMINACLIP:/scratch/epid582w24_class_root/epid582w24_class/shared_data/database/trimmomatic-0.39-1/adapters/TruSeq3-PE.fa:2:30:10:8:true SLIDINGWINDOW:4:20 MINLEN:40 HEADCROP:9
+time trimmomatic PE Rush_KPC_266_1_combine.fastq.gz Rush_KPC_266_2_combine.fastq.gz Rush_KPC_266_trimmomatic_results_with_headcrop/forward_paired.fq.gz Rush_KPC_266_trimmomatic_results_with_headcrop/forward_unpaired.fq.gz Rush_KPC_266_trimmomatic_results_with_headcrop/reverse_paired.fq.gz Rush_KPC_266_trimmomatic_results_with_headcrop/reverse_unpaired.fq.gz ILLUMINACLIP:/scratch/epid582w25_class_root/epid582w25_class/shared_data/database/trimmomatic-0.39-1/adapters/TruSeq3-PE.fa:2:30:10:8:true SLIDINGWINDOW:4:20 MINLEN:40 HEADCROP:9
 
 ```
 
@@ -310,7 +310,7 @@ fastqc -o Rush_KPC_266_FastQC_results/after_trimmomatic_headcrop/ --extract -f f
 Download the reports again and see the difference.
 ```
 
-scp username@greatlakes-xfer.arc-ts.umich.edu:/scratch/epid582w24_class_root/epid582w24_class/username/class5/Rush_KPC_266_FastQC_results/after_trimmomatic_headcrop/*.html /path-to-local-directory/
+scp username@greatlakes-xfer.arc-ts.umich.edu:/scratch/epid582w25_class_root/epid582w25_class/username/class5/Rush_KPC_266_FastQC_results/after_trimmomatic_headcrop/*.html /path-to-local-directory/
 
 ```
 
