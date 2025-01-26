@@ -105,6 +105,11 @@ To evaluate some example assemblies we will use the tool quast. Quast produces a
 To check the quality of the two example assemblies residing in your class6 folder, we ran the following command. 
 
 ```
+#Load quast module and python dependency
+module load python3.10-anaconda/2023.03
+
+module load quast
+
 quast.py -o quast SRR5244781_contigs.fasta SRR5244821_contigs.fasta
 ```
 
