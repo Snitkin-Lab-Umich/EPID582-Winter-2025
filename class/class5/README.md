@@ -71,7 +71,7 @@ You should see "username@glXXXX" in your command prompt where XXXX refers to the
 wd
 
 #Copy over today's materials
-cp -r /scratch/epid582w25_class_root/epid582w25_class/shared_data/data/class5 ./
+cp -r /scratch/epid582w25_class_root/epid582w25_class/shared_data/class5 ./
 
 #Go into the directory
 cd class5/
@@ -85,7 +85,7 @@ Since Kraken takes time to run, we have already placed the output of Kraken comm
 ```
 cd kraken_results
 
-kraken --quick --fastq-input --gzip-compressed --unclassified-out Rush_KPC_266_unclassified.txt --db /scratch/epid582w25_class_root/epid582w25_class/shared_data/data/database/kraken/minikraken_20171013_4GB/ --output Rush_KPC_266_kraken Rush_KPC_266_1_combine.fastq.gz 
+kraken --quick --fastq-input --gzip-compressed --unclassified-out Rush_KPC_266_unclassified.txt --db /scratch/epid582w25_class_root/epid582w25_class/shared_data/database/kraken/minikraken_20171013_4GB/ --output Rush_KPC_266_kraken Rush_KPC_266_1_combine.fastq.gz 
 
 ```
 
@@ -94,7 +94,7 @@ After running kraken, we ran the kraken-report command to create a human readabl
 
 ```
 
-kraken-report --db /scratch/epid582w25_class_root/epid582w25_class/shared_data/data/database/kraken/minikraken_20171013_4GB/ Rush_KPC_266_kraken > Rush_KPC_266_kraken_report.txt
+kraken-report --db /scratch/epid582w25_class_root/epid582w25_class/shared_data/database/kraken/minikraken_20171013_4GB/ Rush_KPC_266_kraken > Rush_KPC_266_kraken_report.txt
 
 ```
 
@@ -142,7 +142,7 @@ Use cyberduck or the scp command as shown below to copy over the Kraken/krona ht
 
 ```
 
-scp username@greatlakes-xfer.arc-ts.umich.edu:/scratch/epid582w25_class_root/epid582w25_class/shared_data/data/class5/kraken_results/Rush_KPC_266_krona.out.html /path-to-local-directory/
+scp username@greatlakes-xfer.arc-ts.umich.edu:/scratch/epid582w25_class_root/epid582w25_class/shared_data/class5/kraken_results/Rush_KPC_266_krona.out.html /path-to-local-directory/
 
 #You can use ~/Desktop/ as your local directory path
 
@@ -261,7 +261,7 @@ TrimmomaticPE –h
 
 ```
 
-TrimmomaticPE Rush_KPC_266_1_combine.fastq.gz Rush_KPC_266_2_combine.fastq.gz Rush_KPC_266_trimmomatic_results/forward_paired.fq.gz Rush_KPC_266_trimmomatic_results/forward_unpaired.fq.gz Rush_KPC_266_trimmomatic_results/reverse_paired.fq.gz Rush_KPC_266_trimmomatic_results/reverse_unpaired.fq.gz ILLUMINACLIP:/scratch/epid582w25_class_root/epid582w25_class/shared_data//database/trimmomatic-0.39-2/adapters/TruSeq3-PE.fa:2:30:10:8:true SLIDINGWINDOW:4:15 MINLEN:40 HEADCROP:0
+TrimmomaticPE Rush_KPC_266_1_combine.fastq.gz Rush_KPC_266_2_combine.fastq.gz Rush_KPC_266_trimmomatic_results/forward_paired.fq.gz Rush_KPC_266_trimmomatic_results/forward_unpaired.fq.gz Rush_KPC_266_trimmomatic_results/reverse_paired.fq.gz Rush_KPC_266_trimmomatic_results/reverse_unpaired.fq.gz ILLUMINACLIP:/scratch/epid582w25_class_root/epid582w25_class/shared_data/database/trimmomatic-0.39-2/adapters/TruSeq3-PE.fa:2:30:10:8:true SLIDINGWINDOW:4:15 MINLEN:40 HEADCROP:0
 
 ```
 
