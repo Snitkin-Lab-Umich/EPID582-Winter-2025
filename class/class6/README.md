@@ -20,12 +20,12 @@ wd
 
 #or 
 
-cd /scratch/epid582w24_class_root/epid582w24_class/username
+cd /scratch/epid582w25_class_root/epid582w25_class/username
 
 
 > Note: Copy files for today's exercise in your home directory.
 
-cp -r /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/class6 ./
+cp -r /scratch/epid582w25_class_root/epid582w25_class/shared_data/data/class6 ./
 ```
 
 Genome Assembly using [Spades](http://bioinf.spbau.ru/spades) Pipeline
@@ -108,7 +108,7 @@ To check the quality of the two example assemblies residing in your class6 folde
 quast.py -o quast SRR5244781_contigs.fasta SRR5244821_contigs.fasta
 ```
 
-The command above will generate a report file in /scratch/epid582w24_class_root/epid582w24_class/username/class6/quast
+The command above will generate a report file in /scratch/epid582w25_class_root/epid582w25_class/username/class6/quast
 
 > ***ii. Explore quast output***
 
@@ -190,13 +190,13 @@ done
 
 mkdir kraken
 
-kraken --quick --fastq-input --gzip-compressed --db /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/database/kraken/minikraken_20171013_4GB/ --output kraken/IMPALA_207_kraken --threads 8 data/fastq/IMPALA_207_R1.fastq.gz
+kraken --quick --fastq-input --gzip-compressed --db /scratch/epid582w25_class_root/epid582w25_class/shared_data/data/database/kraken/minikraken_20171013_4GB/ --output kraken/IMPALA_207_kraken --threads 8 data/fastq/IMPALA_207_R1.fastq.gz
 
-kraken --quick --fastq-input --gzip-compressed --db /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/database/kraken/minikraken_20171013_4GB/ --output kraken/IMPALA_487_kraken --threads 8 data/fastq/IMPALA_487_R1.fastq.gz
+kraken --quick --fastq-input --gzip-compressed --db /scratch/epid582w25_class_root/epid582w25_class/shared_data/data/database/kraken/minikraken_20171013_4GB/ --output kraken/IMPALA_487_kraken --threads 8 data/fastq/IMPALA_487_R1.fastq.gz
 
-kraken --quick --fastq-input --gzip-compressed --db /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/database/kraken/minikraken_20171013_4GB/ --output kraken/IMPALA_582_kraken --threads 8 data/fastq/IMPALA_582_R1.fastq.gz
+kraken --quick --fastq-input --gzip-compressed --db /scratch/epid582w25_class_root/epid582w25_class/shared_data/data/database/kraken/minikraken_20171013_4GB/ --output kraken/IMPALA_582_kraken --threads 8 data/fastq/IMPALA_582_R1.fastq.gz
 
-kraken --quick --fastq-input --gzip-compressed --db /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/database/kraken/minikraken_20171013_4GB/ --output kraken/IMPALA_94_kraken --threads 8 data/fastq/IMPALA_94_R1.fastq.gz
+kraken --quick --fastq-input --gzip-compressed --db /scratch/epid582w25_class_root/epid582w25_class/shared_data/data/database/kraken/minikraken_20171013_4GB/ --output kraken/IMPALA_94_kraken --threads 8 data/fastq/IMPALA_94_R1.fastq.gz
 
 ```
 
@@ -207,7 +207,7 @@ for kraken_file in data/kraken/*_kraken;
 
 do
 
-kraken-report --db /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/database/kraken/minikraken_20171013_4GB/ $kraken_file > $kraken_file\_report.txt;
+kraken-report --db /scratch/epid582w25_class_root/epid582w25_class/shared_data/data/database/kraken/minikraken_20171013_4GB/ $kraken_file > $kraken_file\_report.txt;
 
 done
 
@@ -220,13 +220,13 @@ done
 
 ```
 
-trimmomatic PE -phred33 data/fastq/IMPALA_487_R1.fastq.gz data/fastq/IMPALA_487_R2.fastq.gz data/fastq/IMPALA_487_clean_R1.fq.gz data/fastq/IMPALA_487_clean_unpaired_R1.fq.gz data/fastq/IMPALA_487_clean_R2.fq.gz data/fastq/IMPALA_487_clean_unpaired_R2.fq.gz ILLUMINACLIP:/scratch/epid582w24_class_root/epid582w24_class/shared_data/data/database/trimmomatic-0.39-2/adapters/TruSeq3-PE.fa:2:30:10 SLIDINGWINDOW:4:20 MINLEN:40 HEADCROP:0
+trimmomatic PE -phred33 data/fastq/IMPALA_487_R1.fastq.gz data/fastq/IMPALA_487_R2.fastq.gz data/fastq/IMPALA_487_clean_R1.fq.gz data/fastq/IMPALA_487_clean_unpaired_R1.fq.gz data/fastq/IMPALA_487_clean_R2.fq.gz data/fastq/IMPALA_487_clean_unpaired_R2.fq.gz ILLUMINACLIP:/scratch/epid582w25_class_root/epid582w25_class/shared_data/data/database/trimmomatic-0.39-2/adapters/TruSeq3-PE.fa:2:30:10 SLIDINGWINDOW:4:20 MINLEN:40 HEADCROP:0
 
-trimmomatic PE -phred33 data/fastq/IMPALA_582_R1.fastq.gz data/fastq/IMPALA_582_R2.fastq.gz data/fastq/IMPALA_582_clean_R1.fq.gz data/fastq/IMPALA_582_clean_unpaired_R1.fq.gz data/fastq/IMPALA_582_clean_R2.fq.gz data/fastq/IMPALA_582_clean_unpaired_R2.fq.gz ILLUMINACLIP:/scratch/epid582w24_class_root/epid582w24_class/shared_data//data/database/trimmomatic-0.39-2/adapters/TruSeq3-PE.fa:2:30:10 SLIDINGWINDOW:4:20 MINLEN:40 HEADCROP:0
+trimmomatic PE -phred33 data/fastq/IMPALA_582_R1.fastq.gz data/fastq/IMPALA_582_R2.fastq.gz data/fastq/IMPALA_582_clean_R1.fq.gz data/fastq/IMPALA_582_clean_unpaired_R1.fq.gz data/fastq/IMPALA_582_clean_R2.fq.gz data/fastq/IMPALA_582_clean_unpaired_R2.fq.gz ILLUMINACLIP:/scratch/epid582w25_class_root/epid582w25_class/shared_data//data/database/trimmomatic-0.39-2/adapters/TruSeq3-PE.fa:2:30:10 SLIDINGWINDOW:4:20 MINLEN:40 HEADCROP:0
 
-trimmomatic PE -phred33 data/fastq/IMPALA_207_R1.fastq.gz data/fastq/IMPALA_207_R2.fastq.gz data/fastq/IMPALA_207_clean_R1.fq.gz data/fastq/IMPALA_207_clean_unpaired_R1.fq.gz data/fastq/IMPALA_207_clean_R2.fq.gz data/fastq/IMPALA_207_clean_unpaired_R2.fq.gz ILLUMINACLIP:/scratch/epid582w24_class_root/epid582w24_class/shared_data//data/database/trimmomatic-0.39-2/adapters/TruSeq3-PE.fa:2:30:10 SLIDINGWINDOW:4:20 MINLEN:40 HEADCROP:0
+trimmomatic PE -phred33 data/fastq/IMPALA_207_R1.fastq.gz data/fastq/IMPALA_207_R2.fastq.gz data/fastq/IMPALA_207_clean_R1.fq.gz data/fastq/IMPALA_207_clean_unpaired_R1.fq.gz data/fastq/IMPALA_207_clean_R2.fq.gz data/fastq/IMPALA_207_clean_unpaired_R2.fq.gz ILLUMINACLIP:/scratch/epid582w25_class_root/epid582w25_class/shared_data//data/database/trimmomatic-0.39-2/adapters/TruSeq3-PE.fa:2:30:10 SLIDINGWINDOW:4:20 MINLEN:40 HEADCROP:0
 
-trimmomatic PE -phred33 data/fastq/IMPALA_94_R1.fastq.gz data/fastq/IMPALA_94_R2.fastq.gz data/fastq/IMPALA_94_clean_R1.fq.gz data/fastq/IMPALA_94_clean_unpaired_R1.fq.gz data/fastq/IMPALA_94_clean_R2.fq.gz data/fastq/IMPALA_94_clean_unpaired_R2.fq.gz ILLUMINACLIP:/scratch/epid582w24_class_root/epid582w24_class/shared_data//data/database/trimmomatic-0.39-2/adapters/TruSeq3-PE.fa:2:30:10 SLIDINGWINDOW:4:20 MINLEN:40 HEADCROP:0
+trimmomatic PE -phred33 data/fastq/IMPALA_94_R1.fastq.gz data/fastq/IMPALA_94_R2.fastq.gz data/fastq/IMPALA_94_clean_R1.fq.gz data/fastq/IMPALA_94_clean_unpaired_R1.fq.gz data/fastq/IMPALA_94_clean_R2.fq.gz data/fastq/IMPALA_94_clean_unpaired_R2.fq.gz ILLUMINACLIP:/scratch/epid582w25_class_root/epid582w25_class/shared_data//data/database/trimmomatic-0.39-2/adapters/TruSeq3-PE.fa:2:30:10 SLIDINGWINDOW:4:20 MINLEN:40 HEADCROP:0
 
 module load Bioinformatics
 module load spades
@@ -448,7 +448,7 @@ Now, let's take a look and see how our data quality looks. Download the html rep
 ```
 #Note: Make sure you change 'username' in the below command to your 'uniqname'.
 
-scp username@greatlakes-xfer.arc-ts.umich.edu:/scratch/epid582w24_class_root/epid582w24_class/username/class6/Cdiff_multiqc_report.html ~/Desktop/
+scp username@greatlakes-xfer.arc-ts.umich.edu:/scratch/epid582w25_class_root/epid582w25_class/username/class6/Cdiff_multiqc_report.html ~/Desktop/
 
 ```
 
@@ -494,7 +494,7 @@ If you are not in class_5 folder, navigate to it and change directory to multiqc
 ```
 
 #Change directory
-cd /scratch/epid582w24_class_root/epid582w24_class/username/class6/
+cd /scratch/epid582w25_class_root/epid582w25_class/username/class6/
 
 cd multiqc_analysis
 
