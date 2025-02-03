@@ -42,7 +42,7 @@ Lets copy over class7 data to your class working directory.
 ```
 wd
 
-cp -r /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/class7 ./
+cp -r /scratch/epid582w25_class_root/epid582w25_class/shared_data/class7 ./
 
 cd class7
 ```
@@ -259,8 +259,8 @@ mkdir ~/Desktop/class7
 Use scp or cyberduck to get `gene_presence_absence.csv` and `gene_presence_absence.Rtab` onto your laptop desktop folder.
 
 ```
-scp username@greatlakes-xfer.arc-ts.umich.edu:/scratch/epid582w24_class_root/epid582w24_class/username/class7/panaroo/gene_presence_absence.csv ~/Desktop/class7
-scp username@greatlakes-xfer.arc-ts.umich.edu:/scratch/epid582w24_class_root/epid582w24_class/username/class7/panaroo/gene_presence_absence.Rtab ~/Desktop/class7
+scp username@greatlakes-xfer.arc-ts.umich.edu:/scratch/epid582w25_class_root/epid582w25_class/username/class7/panaroo/gene_presence_absence.csv ~/Desktop/class7
+scp username@greatlakes-xfer.arc-ts.umich.edu:/scratch/epid582w25_class_root/epid582w25_class/username/class7/panaroo/gene_presence_absence.Rtab ~/Desktop/class7
 ```
 
 > ***i. Prepare and clean data***
@@ -371,7 +371,7 @@ conda create -n eggnog-mapper -c bioconda eggnog-mapper python=3.9
 
 conda activate eggnog-mapper
 
-export EGGNOG_DATA_DIR=/scratch/epid582w24_class_root/epid582w24_class/shared_data/data/database/eggnog
+export EGGNOG_DATA_DIR=/scratch/epid582w25_class_root/epid582w25_class/shared_data/database/eggnog
 
 emapper.py -h
 ```
