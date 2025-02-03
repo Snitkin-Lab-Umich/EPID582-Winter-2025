@@ -393,12 +393,10 @@ Earlier, we learned how to perform basic and functional genome annotation using 
 
 We will be looking at 4 *Klebsiella pneumoniae* genomes from human and environmental sources. Two of the genomes are from [this paper](https://www.pnas.org/content/112/27/E3574), and the other two are sequences from our lab. We are interested in learning more about potential differences in the resistomes of human and environmental isolates. 
 
-Now activate the class7 conda environment.
+Now load amrfinderplus using the module command
 
 ```
-# If you haven't installed class7 then install it with: conda create -n class7 -c bioconda blast tbb=2020.2 ncbi-amrfinderplus
-
-conda activate class7
+module load Bioinformatics AMRfinder
 ```
 
 Identify antibiotic resistance genes with AMRFinderPlus
