@@ -99,14 +99,8 @@ Use these instruction to load Snippy into your environment:
 
 ```
 # Load these modules
-module load python3.10-anaconda/2023.03
 module load Bioinformatics
-module load perl-modules
-
-# Add this line to your bashrc (open it with nano -> add the line -> save it) and source it
-export PATH=$PATH:/scratch/epid582w24_class_root/epid582w24_class/shared_data/bin/snippy/bin
-
-source ~/.bashrc
+module load snippy
 
 snippy --check
 ```
@@ -118,7 +112,7 @@ Now, copy over class9 data which contains clean fastq reads for sample PCMP_H326
 ```
 wd
 
-cp -r ../shared_data/data/class9/ ./
+cp -r ../shared_data/class9/ ./
 
 cd class9
 
