@@ -76,7 +76,7 @@ Here is the command that we used to extract metadata information for the above m
 wd
 
 #Copy over files
-cp -r ../shared_data/data/class8/ .
+cp -r ../shared_data/class8/ .
 
 #Enter class 8 directory
 cd class8
