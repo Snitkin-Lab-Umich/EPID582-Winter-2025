@@ -85,9 +85,10 @@ annot
 
 #Build NJ tree
 ##Create a distance matrix from alignment
-dist_mat <- dist.dna(mrsa_aln)
+dist_mat <- dist.dna(mrsa_aln, model = "N") #Model = N creates distances that are number of variants
 
 ##Look at distance matrix
+hist(dist_mat)
 pheatmap(dist_mat)
 
 ##Create a neighbor joining tree from distance matrix
