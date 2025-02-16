@@ -79,8 +79,8 @@ mrsa_aln
 
 ##Annotation file
 class(annot)
-str(annot)
-annot
+view(annot)
+table(annot)
 
 
 #Build NJ tree
