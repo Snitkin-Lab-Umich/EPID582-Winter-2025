@@ -48,6 +48,7 @@ install.packages("ggnewscale")
 install.packages("tidyverse")
 install.packages("RColorBrewer")
 install.packages("BiocManager")
+install.packages('pheatmap')
 BiocManager::install("YuLab-SMU/treedataverse")
 
 #Load R libraries
