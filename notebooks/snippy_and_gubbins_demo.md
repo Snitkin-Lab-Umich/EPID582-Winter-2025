@@ -568,7 +568,7 @@ Link to MLST tool: https://github.com/tseemann/mlst
 
 
 ```bash
-cd /scratch/epid582w25_class_root/epid582w25_class/shared_data/
+cd /scratch/epid582w25_class_root/epid582w25_class/shared_data/final_project/
 ```
 
 
@@ -630,17 +630,19 @@ mlst --quiet --scheme klebsiella --csv /scratch/epid582w25_class_root/epid582w25
 
 ```bash
 head crkp_mlst.csv
+
+/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2/crkp_assembly/SRR6204326.fasta,klebsiella,258,gapA(3),infB(3),mdh(1),pgi(1),phoE(1),rpoB(1),tonB(79)
+/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2/crkp_assembly/SRR6204327.fasta,klebsiella,258,gapA(3),infB(3),mdh(1),pgi(1),phoE(1),rpoB(1),tonB(79)
+/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2/crkp_assembly/SRR6204328.fasta,klebsiella,258,gapA(3),infB(3),mdh(1),pgi(1),phoE(1),rpoB(1),tonB(79)
+/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2/crkp_assembly/SRR6204329.fasta,klebsiella,258,gapA(3),infB(3),mdh(1),pgi(1),phoE(1),rpoB(1),tonB(79)
+/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2/crkp_assembly/SRR6204330.fasta,klebsiella,258,gapA(3),infB(3),mdh(1),pgi(1),phoE(1),rpoB(1),tonB(79)
+/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2/crkp_assembly/SRR6204332.fasta,klebsiella,258,gapA(3),infB(3),mdh(1),pgi(1),phoE(1),rpoB(1),tonB(79)
+/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2/crkp_assembly/SRR6204334.fasta,klebsiella,258,gapA(3),infB(3),mdh(1),pgi(1),phoE(1),rpoB(1),tonB(79)
+/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2/crkp_assembly/SRR6204335.fasta,klebsiella,258,gapA(3),infB(3),mdh(1),pgi(1),phoE(1),rpoB(1),tonB(79)
+/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2/crkp_assembly/SRR6204336.fasta,klebsiella,258,gapA(3),infB(3),mdh(1),pgi(1),phoE(1),rpoB(1),tonB(79)
+/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2/crkp_assembly/SRR6204337.fasta,klebsiella,258,gapA(3),infB(3),mdh(1),pgi(1),phoE(1),rpoB(1),tonB(79)
 ```
 
-    /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/crkp_assembly/SRR6204326.fasta,klebsiella,258,gapA(3),infB(3),mdh(1),pgi(1),phoE(1),rpoB(1),tonB(79)
-    /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/crkp_assembly/SRR6204327.fasta,klebsiella,258,gapA(3),infB(3),mdh(1),pgi(1),phoE(1),rpoB(1),tonB(79)
-    /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/crkp_assembly/SRR6204328.fasta,klebsiella,258,gapA(3),infB(3),mdh(1),pgi(1),phoE(1),rpoB(1),tonB(79)
-    /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/crkp_assembly/SRR6204329.fasta,klebsiella,258,gapA(3),infB(3),mdh(1),pgi(1),phoE(1),rpoB(1),tonB(79)
-    /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/crkp_assembly/SRR6204330.fasta,klebsiella,258,gapA(3),infB(3),mdh(1),pgi(1),phoE(1),rpoB(1),tonB(79)
-    /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/crkp_assembly/SRR6204332.fasta,klebsiella,258,gapA(3),infB(3),mdh(1),pgi(1),phoE(1),rpoB(1),tonB(79)
-    /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/crkp_assembly/SRR6204334.fasta,klebsiella,258,gapA(3),infB(3),mdh(1),pgi(1),phoE(1),rpoB(1),tonB(79)
-    /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/crkp_assembly/SRR6204335.fasta,klebsiella,258,gapA(3),infB(3),mdh(1),pgi(1),phoE(1),rpoB(1),tonB(79)
-    /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/crkp_assembly/SRR6204336.fasta,klebsiella,258,gapA(3),infB(3),mdh(1),pgi(1),phoE(1),rpoB(1),tonB(79)
-    /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/crkp_assembly/SRR6204337.fasta,klebsiella,258,gapA(3),infB(3),mdh(1),pgi(1),phoE(1),rpoB(1),tonB(79)
+   
     (mlst) 
 
