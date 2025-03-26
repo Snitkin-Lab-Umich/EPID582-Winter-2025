@@ -4,7 +4,7 @@ This is a demo showing how you can apply various bioinformatics tools on multipl
 
 For the purpose of this demo, we will use dataset from Assignment 2 which is located here:
 
-```/scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/outbreak_fastq/```
+```/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/```
 
 
 
@@ -18,11 +18,11 @@ Link to Gubbins Github: https://github.com/nickjcroucher/gubbins
 
 Since, Gubbins is run on the final output of Snippy, we will run Snippy and Gubbins in the same folder.
  
-- We will create a new directory to save Snippy and Gubbins results under shared_data - ```shared_data/data/snippy_and_gubbins_demo```
+- We will create a new directory to save Snippy and Gubbins results under shared_data - ```shared_data/data/final_project/snippy_and_gubbins_demo```
 
 
 ```bash
-cd /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/
+cd /scratch/epid582w25_class_root/epid582w25_class/shared_data/final_project/
 ```
 
 
@@ -39,9 +39,9 @@ cd snippy_and_gubbins_demo
 
 The goal of this demo is to show how you can ask Snippy to perform variant calling on multiple samples in one go rather than running it individually on each sample. 
 
-Snippy package comes with a helper script called ```snippy-multi``` that takes a tab seperated list of Sample names and directory path to its fastq sequences, generates a bash script containing Snippy commands for each samples which can then be submitted as a slurm job.
+Snippy package comes with a helper script called ```snippy-multi``` that takes a tab seperated list of sample names and directory path to its fastq sequences, generates a bash script containing Snippy commandsfor each samples which can then be submitted as a slurm job.
 
-We will use unix for loop, cut and sed command to create a tab seperated file containing three columns seperated by a tab: 
+We will use a Unix for loop, cut and sed command to create a tab seperated file containing three columns seperated by a tab: 
 
 ```SAMPLENAME1    PATH-TO-SAMPLENAME1_FORWARD_READ    PATH-TO-SAMPLENAME1_REVERSE_READ)```
 
@@ -49,19 +49,22 @@ We will use unix for loop, cut and sed command to create a tab seperated file co
 
 ```bash
 #Loop through each file of forward reads, and print genome name and F/R read files for snippy batch
-for r1 in /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/outbreak_fastq/*_1.fastq.gz;
-do 
+for r1 in /scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/*_1.fastq.gz;
+do
+
     #Get name of genome from forward reads
     isolate=`echo $r1 | cut -d'/' -f9 | sed 's/_1.fastq.gz//g'`;
+
     #Get reverse reads corresponding to current forward reads
     r2=`echo $r1 | sed 's/_1.fastq/_2.fastq/g'`;
+
     #Print out genome, forward reads and reverse reads, separated by tabs
     printf "$isolate\t$r1\t$r2\n";
+
 done > input.tab
 ```
 
 ***Lets check the input.tab file we just created:***
-
 
 ```bash
 head input.tab
@@ -144,7 +147,7 @@ Note: Make sure to use project specific reference genome while adapting this com
 
 
 ```bash
-snippy-multi input.tab --ref /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/class9/KPNIH1.gbk --cpu 4 --force --report > runme.sh
+snippy-multi input.tab --ref /scratch/epid582w25_class_root/epid582w25_class/shared_data/class9/KPNIH1.gbk --cpu 4 --force --report > runme.sh
 ```
 
     Reading: input.tab
@@ -198,7 +201,7 @@ touch snippy.sbat
 #SBATCH --mail-type=BEGIN,END,FAIL,REQUEUE
 #SBATCH --export=ALL
 #SBATCH --partition=standard
-#SBATCH --account=epid582w24_class
+#SBATCH --account=epid582w25_class
 # Number of cores, amount of memory, and walltime
 #SBATCH --nodes=1 --ntasks=1 --cpus-per-task=4 --mem=20g --time=12:00:00
 
@@ -252,6 +255,7 @@ head core.txt
 ```bash
 # Unload any previously loaded modules.
 module purge
+
 # Load Gubbins
 module load Bioinformatics gubbins/2.3.1
 ```
@@ -348,14 +352,14 @@ Copy and paste these lines to gubbins.sbat file using nano:
 #SBATCH --mail-type=BEGIN,END,FAIL,REQUEUE
 #SBATCH --export=ALL
 #SBATCH --partition=standard
-#SBATCH --account=epid582w24_class
+#SBATCH --account=epid582w25_class
 # Number of cores, amount of memory, and walltime
 #SBATCH --nodes=1 --ntasks=1 --cpus-per-task=8 --mem=40g --time=12:00:00
 #  Change to the directory you submitted from
 cd $SLURM_SUBMIT_DIR
 echo $SLURM_SUBMIT_DIR
 
-run_gubbins --prefix crkp_core_full_aln --verbose /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/snippy_and_gubbins_demo/core.full.aln
+run_gubbins --prefix crkp_core_full_aln --verbose /scratch/epid582w25_class_root/epid582w25_class/shared_data/final_project/snippy_and_gubbins_demo/core.full.aln
 ```
 
 
@@ -380,7 +384,7 @@ mv crkp_core_full_aln.* gubbins_results/
 
 
 ```bash
-cd /scratch/epid582w24_class_root/epid582w24_class/shared_data/data
+cd /scratch/epid582w25_class_root/epid582w25_class/shared_data/data
 ```
 
 
@@ -567,7 +571,7 @@ Link to MLST tool: https://github.com/tseemann/mlst
 
 
 ```bash
-cd /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/
+cd /scratch/epid582w25_class_root/epid582w25_class/shared_data/
 ```
 
 
@@ -623,7 +627,7 @@ mlst -list
 
 ```bash
 # Run mlst tool on all the CRKP assemblies in crkp_assembly folder and save the output in csv format to a file mlst.csv.
-mlst --quiet --scheme klebsiella --csv /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/crkp_assembly/*.fasta > crkp_mlst.csv
+mlst --quiet --scheme klebsiella --csv /scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2/crkp_assembly/*.fasta > crkp_mlst.csv
 ```
 
 
