@@ -68,7 +68,7 @@ done > input.tab
 
 ```bash
 head input.tab
-```
+
 SRR6204326	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204326_1.fastq.gz	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204326_2.fastq.gz
 SRR6204327	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204327_1.fastq.gz	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204327_2.fastq.gz
 SRR6204328	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204328_1.fastq.gz	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204328_2.fastq.gz
@@ -79,8 +79,7 @@ SRR6204334	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignmen
 SRR6204335	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204335_1.fastq.gz	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204335_2.fastq.gz
 SRR6204336	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204336_1.fastq.gz	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204336_2.fastq.gz
 SRR6204337	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204337_1.fastq.gz	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204337_2.fastq.gz
-
-
+```
 
 ***The first column contains samplenames that Snippy will use as a prefix to create output foldername***
 
