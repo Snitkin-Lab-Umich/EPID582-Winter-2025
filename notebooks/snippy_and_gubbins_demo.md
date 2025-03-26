@@ -384,7 +384,7 @@ mv crkp_core_full_aln.* gubbins_results/
 
 
 ```bash
-cd /scratch/epid582w25_class_root/epid582w25_class/shared_data/data
+cd /scratch/epid582w25_class_root/epid582w25_class/shared_data/final_project/
 ```
 
 
@@ -399,12 +399,8 @@ cd AMRFinderPlus_demo
 
 
 ```bash
-conda activate class7
+module load Bioinformatics AMRfinder
 ```
-
-    (class7) 
-
-
 
 
 ```bash
@@ -412,7 +408,7 @@ conda activate class7
 amrfinder -h
 ```
 
-    (class7) Identify AMR and virulence genes in proteins and/or contigs and print a report
+    Identify AMR and virulence genes in proteins and/or contigs and print a report
     
     DOCUMENTATION
         See https://github.com/ncbi/amr/wiki for full documentation
@@ -500,20 +496,20 @@ amrfinder -h
         Error log file, appended, opened on application start
     
     Temporary directory used is $TMPDIR or "/tmp"
-    (class7) 
-
-
 
 
 ```bash
-# We will generate AMRfinderplus commands for each individual genomes with the following for loop and submit it as a cluster job.
-for i in /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/crkp_assembly/*.fasta; 
-do 
-output=`echo $i | cut -d'/' -f9 | sed 's/.fasta/.txt/g'`; 
-report=`echo $i | cut -d'/' -f9 | sed 's/.fasta/_mutation_report.tsv/g'`; 
-echo "amrfinder --plus --output $output -n $i --mutation_all $report --organism Klebsiella_pneumoniae";
-# Comment this line to print AMRFinderPlus commands
-amrfinder --plus --output $output -n $i --mutation_all $report --organism Klebsiella_pneumoniae;
+for i in /scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2/crkp_assembly/*.fasta;
+do
+
+        #Create output and report file names (note the field number from the cut command will depend on the path length)
+        output=`echo $i | cut -d'/' -f8 | sed 's/.fasta/.txt/g'`;
+        report=`echo $i | cut -d'/' -f8 | sed 's/.fasta/_mutation_report.tsv/g'`;
+
+        # Uncomment this line to print AMRFinderPlus commands.
+        echo "amrfinder --plus --output $output -n $i --mutation_all $report --organism Klebsiella_pneumoniae";
+        amrfinder --plus --output $output -n $i --mutation_all $report --organism Klebsiella_pneumoniae;
+
 done
 ```
 
@@ -526,10 +522,6 @@ done
 ```bash
 touch AMRFinderPlus_demo.sbat
 ```
-
-    (class7) 
-
-
 
 Copy and paste these lines to AMRFinderPlus_demo.sbat file using nano:
 
@@ -545,17 +537,22 @@ Copy and paste these lines to AMRFinderPlus_demo.sbat file using nano:
 #SBATCH --account=epid582w24_class
 # Number of cores, amount of memory, and walltime
 #SBATCH --nodes=1 --ntasks=1 --cpus-per-task=8 --mem=40g --time=12:00:00
+
 #  Change to the directory you submitted from
 cd $SLURM_SUBMIT_DIR
 echo $SLURM_SUBMIT_DIR
 
-for i in /scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/crkp_assembly/*.fasta; 
+for i in /scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2/crkp_assembly/*.fasta;
 do
-output=`echo $i | cut -d'/' -f9 | sed 's/.fasta/.txt/g'`; 
-report=`echo $i | cut -d'/' -f9 | sed 's/.fasta/_mutation_report.tsv/g'`;
-# Uncomment this line to print AMRFinderPlus commands.
-#echo "amrfinder --plus --output $output -n $i --mutation_all $report --organism Klebsiella_pneumoniae";
-amrfinder --plus --output $output -n $i --mutation_all $report --organism Klebsiella_pneumoniae;
+
+        #Create output and report file names (note the field number from the cut command will depend on the path length)
+        output=`echo $i | cut -d'/' -f8 | sed 's/.fasta/.txt/g'`;
+        report=`echo $i | cut -d'/' -f8 | sed 's/.fasta/_mutation_report.tsv/g'`;
+
+        # Uncomment this line to print AMRFinderPlus commands.
+        echo "amrfinder --plus --output $output -n $i --mutation_all $report --organism Klebsiella_pneumoniae";
+        amrfinder --plus --output $output -n $i --mutation_all $report --organism Klebsiella_pneumoniae;
+
 done
 
 ```
