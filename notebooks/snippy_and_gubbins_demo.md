@@ -53,7 +53,7 @@ for r1 in /scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment
 do
 
     #Get name of genome from forward reads
-    isolate=`echo $r1 | cut -d'/' -f9 | sed 's/_1.fastq.gz//g'`;
+    isolate=`echo $r1 | cut -d'/' -f7 | sed 's/_1.fastq.gz//g'`;
 
     #Get reverse reads corresponding to current forward reads
     r2=`echo $r1 | sed 's/_1.fastq/_2.fastq/g'`;
@@ -69,17 +69,17 @@ done > input.tab
 ```bash
 head input.tab
 ```
+SRR6204326	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204326_1.fastq.gz	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204326_2.fastq.gz
+SRR6204327	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204327_1.fastq.gz	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204327_2.fastq.gz
+SRR6204328	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204328_1.fastq.gz	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204328_2.fastq.gz
+SRR6204329	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204329_1.fastq.gz	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204329_2.fastq.gz
+SRR6204330	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204330_1.fastq.gz	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204330_2.fastq.gz
+SRR6204332	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204332_1.fastq.gz	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204332_2.fastq.gz
+SRR6204334	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204334_1.fastq.gz	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204334_2.fastq.gz
+SRR6204335	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204335_1.fastq.gz	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204335_2.fastq.gz
+SRR6204336	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204336_1.fastq.gz	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204336_2.fastq.gz
+SRR6204337	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204337_1.fastq.gz	/scratch/epid582w25_class_root/epid582w25_class/shared_data/assignment_2_outbreak_fastq/SRR6204337_2.fastq.gz
 
-    SRR6204326	/scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/outbreak_fastq/SRR6204326_1.fastq.gz	/scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/outbreak_fastq/SRR6204326_2.fastq.gz
-    SRR6204327	/scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/outbreak_fastq/SRR6204327_1.fastq.gz	/scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/outbreak_fastq/SRR6204327_2.fastq.gz
-    SRR6204328	/scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/outbreak_fastq/SRR6204328_1.fastq.gz	/scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/outbreak_fastq/SRR6204328_2.fastq.gz
-    SRR6204329	/scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/outbreak_fastq/SRR6204329_1.fastq.gz	/scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/outbreak_fastq/SRR6204329_2.fastq.gz
-    SRR6204330	/scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/outbreak_fastq/SRR6204330_1.fastq.gz	/scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/outbreak_fastq/SRR6204330_2.fastq.gz
-    SRR6204332	/scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/outbreak_fastq/SRR6204332_1.fastq.gz	/scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/outbreak_fastq/SRR6204332_2.fastq.gz
-    SRR6204334	/scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/outbreak_fastq/SRR6204334_1.fastq.gz	/scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/outbreak_fastq/SRR6204334_2.fastq.gz
-    SRR6204335	/scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/outbreak_fastq/SRR6204335_1.fastq.gz	/scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/outbreak_fastq/SRR6204335_2.fastq.gz
-    SRR6204336	/scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/outbreak_fastq/SRR6204336_1.fastq.gz	/scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/outbreak_fastq/SRR6204336_2.fastq.gz
-    SRR6204337	/scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/outbreak_fastq/SRR6204337_1.fastq.gz	/scratch/epid582w24_class_root/epid582w24_class/shared_data/data/assignment_2/outbreak_fastq/SRR6204337_2.fastq.gz
 
 
 ***The first column contains samplenames that Snippy will use as a prefix to create output foldername***
