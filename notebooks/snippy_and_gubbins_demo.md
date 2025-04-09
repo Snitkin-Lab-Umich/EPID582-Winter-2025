@@ -348,18 +348,19 @@ Copy and paste these lines to gubbins.sbat file using nano:
 # Job name
 #SBATCH --job-name=Gubbins
 # User info
-#SBATCH --mail-user=username@umich.edu
+#SBATCH --mail-user=esnitkin@umich.edu
 #SBATCH --mail-type=BEGIN,END,FAIL,REQUEUE
 #SBATCH --export=ALL
 #SBATCH --partition=standard
 #SBATCH --account=epid582w25_class
 # Number of cores, amount of memory, and walltime
-#SBATCH --nodes=1 --ntasks=1 --cpus-per-task=8 --mem=40g --time=12:00:00
-#  Change to the directory you submitted from
-cd $SLURM_SUBMIT_DIR
-echo $SLURM_SUBMIT_DIR
+#SBATCH --nodes=1 --ntasks=1 --cpus-per-task=19 --mem=95g --time=12:00:00
 
-run_gubbins --prefix crkp_core_full_aln --verbose /scratch/epid582w25_class_root/epid582w25_class/shared_data/final_project/snippy_and_gubbins_demo/core.full.aln
+#  Change to the directory you submitted from
+mkdir gubbins
+cd $SLURM_SUBMIT_DIR/gubbins
+
+run_gubbins --prefix crkp_core_full_aln --threads 18 --verbose /scratch/epid582w25_class_root/epid582w25_class/shared_data/final_project/snippy_and_gubbins_demo/core.full.aln
 ```
 
 
